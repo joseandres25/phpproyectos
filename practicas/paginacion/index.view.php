@@ -25,8 +25,6 @@
 					<li><a href="?pagina=<?php echo $pagina -1 ?>">&laquo;</a></li>
 
 				<?php endif; ?>
-
-
 				<?php 
 					//ciclo para mostrar las paginas.
 					for ($i=1; $i <= $numeropaginas; $i++) { 
@@ -38,7 +36,6 @@
 						}
 
 					}
-
 				 ?>
 				 <!-- Establecemos el boton de posterior desabilitado -->
 				 <?php if ($pagina == $numeropaginas): ?>
@@ -47,8 +44,6 @@
 					<li><a href="?pagina=<?php echo $pagina +1 ?>">&raquo;</a></li>
 
 				<?php endif; ?>
-
-
 				<!--
 				<li class="disabled"">&laquo;</li>
 				<li class="active"><a href="#">1</a></li>
