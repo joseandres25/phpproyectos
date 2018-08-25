@@ -26,6 +26,14 @@
 				<i class="ml-0 fa fa-lock"></i><input type="password" name="password" class="mr-10 w-50" placeholder="contraseña"><i class="submit fa fa-arrow-right btn-primary w-5 h-100" onclick="login.submit();"></i>
 
 			</div>
+			<?php if (!empty($errores)): ?>
+				<div class="error">
+					<ul>
+						<?php echo $errores; ?>
+					</ul>
+				</div>
+
+			<?php endif ?>
 
 		</form>
 		<p class="text-center">

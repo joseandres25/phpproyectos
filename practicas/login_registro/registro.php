@@ -13,7 +13,57 @@
 		$password = $_POST['password'];
 		$password2 = $_POST['password2'];
 
-		echo "$usuario . $password2 . $password";
+		/*echo "$usuario . $password2 . $password";*/
+
+		$errores = '';
+
+		//comprobamos si las casillas estan vacias
+		if (empty($usuario) or empty($password2) or empty($password)){
+
+			$errores .= '<li>Rellena los datos correctamente.</li>';
+
+		}else{
+
+					try {
+						$conexion = new PDO('mysql:host=localhost;dbname=login','root','');
+
+					} catch (PDOException $e) {
+						echo 'Error: ' . $e->getMessage();
+					}
+
+				$statement = $conexion->prepare('select * from usuarios where usuario= :usuario LIMIT 1');
+				$statement->execute(array(':usuario' => $usuario));
+
+				$resultado = $statement->fetch();
+
+				
+				if($resultado != false){
+					$errores .= '<li>el usuario ya existe</li>';
+				}
+
+				//hacer un hash de la contraseña para la base de datos.
+
+				$password = hash('sha512', $password);
+				$password2 = hash('sha512', $password2);
+
+				//echo "$usuario . $password . $password2";
+
+				if( $password != $password2){
+
+					$errores .= '<li>las contraseñas no son iguales</li>';
+
+				}
+			
+		}
+
+		if($errores == ''){
+			$statement = $conexion->prepare('INSERT INTO usuarios (id, usuario, pass) VALUES (null, :usuario, :pass)');
+			$statement->execute(array(':usuario' => $usuario,':pass' => $password));
+		
+			//header('Location : login.php');
+			
+
+		}
 
 	}
 
