@@ -1,32 +1,27 @@
 <?php require 'views/header.php'; ?>
 
 	<div class="contenedor">
-		<div class="post">
-			<article>
-				<h2 class="titulo"><a href="single.php">Titulo Del Articulo</a></h2>
-				<p class="fecha">12/15/4144</p>
-				<div class="thumb">
-					<a href="#">
-						<img src="<?php echo RUTA;?>/imagenes/1.png" alt="placeholder+image">
-					</a>
-				</div>
-				<p class="extracto">Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem</p>
-				<a href="#" class="continuar">Continuar leyendo</a>
-			</article>
-		</div>
-		<div class="post">
-			<article>
-				<h2 class="titulo"><a href="">Titulo Del Articulo</a></h2>
-				<p class="fecha">12/15/4144</p>
-				<div class="thumb">
-					<a href="#">
-						<img src="<?php echo RUTA;?>/imagenes/1.png" alt="placeholder+image">
-					</a>
-				</div>
-				<p class="extracto">Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem</p>
-				<a href="#" class="continuar">Continuar leyendo</a>
-			</article>
-		</div>
+		
+		<?php foreach ($posts as $post): ?>
+			<div class="post">
+				<article>
+					<h2 class="titulo"><a href="single.php?id=<?php echo $post['id']; ?>"><?php echo $post['titulo'];?></a></h2>
+					<p class="fecha"><?php echo $post['fecha']; ?></p>
+					<div class="thumb">
+						<a href="single.php?id=<?php echo $post['id']; ?>">
+							<img src="<?php echo RUTA;?>/imagenes/<?php echo $post['thumb']; ?>" alt="placeholder+image">
+						</a>
+					</div>
+					<p class="extracto"><?php echo $post['extracto']; ?></p>
+					<a href="single.php?id=<?php echo $post['id']; ?>" class="continuar">Continuar leyendo</a>
+				</article>
+			</div>
+
+		<?php  endforeach; ?> 
+
+
+
+
 
 		<?php require 'paginacion.php'; ?>
 		
