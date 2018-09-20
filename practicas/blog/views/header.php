@@ -6,7 +6,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo RUTA; ?>css/estilos.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo RUTA; ?>/css/estilos.css">
 	<title>Blog</title>
 </head>
 <body>

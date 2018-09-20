@@ -7,7 +7,8 @@
 					<div class="thumb">
 							<img src="<?php echo RUTA;?>/imagenes/<?php echo $post['thumb']; ?>" alt="placeholder+image">	
 					</div>
-					<p class="extracto"><?php echo $post['texto'] ?></p>
+					<!-- nl2br respetamos los espacios-->
+					<p class="extracto"><?php echo nl2br($post['texto']); ?></p>
 					
 				</article>
 			</div>

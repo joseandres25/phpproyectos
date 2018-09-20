@@ -2,7 +2,7 @@
 
 	//guardamos cuantos articulos usuario y contraseña.
 
-	define('RUTA', 'http://localhost/cursoPHP/practicas/blog/');
+	define('RUTA', 'http://localhost/cursoPHP/practicas/blog');
 
 	$bd_config = array(
 		'basededatos' => 'curso_blog',

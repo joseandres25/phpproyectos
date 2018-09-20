@@ -82,6 +82,11 @@
 		return $numero_paginas;
 	}
 
+	function comprobarSession(){
+		if(isset($_SESSION['admin'])){
+			header('Location: '. RUTA );
+		}
+	}
 
 
  ?>
