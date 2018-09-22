@@ -83,8 +83,8 @@
 	}
 
 	function comprobarSession(){
-		if(isset($_SESSION['admin'])){
-			header('Location: '. RUTA );
+		if(!isset($_SESSION['admin'])){
+			header('Location: '. RUTA . '/admin');
 		}
 	}
 

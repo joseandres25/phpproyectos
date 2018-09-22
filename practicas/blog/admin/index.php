@@ -11,6 +11,7 @@
 	//comprobar sesion
 
 	comprobarSession();
+
 	if(!$conexion){
 		header('Location:../error.php');
 	}
